@@ -6,6 +6,7 @@ contract HelloWorld {
     string storeMsg;
 
     function set(string memory message) public {
+        console.log("storeMsg: %s", message); // bts1: btc
         storeMsg = message;
     }
 

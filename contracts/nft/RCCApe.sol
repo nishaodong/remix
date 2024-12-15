@@ -4,7 +4,9 @@
 pragma solidity ^0.8.21;
 
 import "./ERC721.sol";
-
+/*
+代币合约，转账、购买、上架的操作对象
+*/
 contract RCCApe is ERC721{
     uint public MAX_APES = 10000; // 总量
 

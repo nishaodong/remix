@@ -4,6 +4,11 @@ pragma solidity >=0.7.0 <0.9.0;
 import "./IERC721.sol";
 import "./IERC721Receiver.sol";
 import "./RCCApe.sol";
+/**
+本合约为逻辑控制合约
+卖家：0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+买家：0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2
+*/
 
 contract NFTSwap is IERC721Receiver {
     event List(
@@ -121,5 +126,11 @@ contract NFTSwap is IERC721Receiver {
         bytes calldata data
     ) external override returns (bytes4) {
         return IERC721Receiver.onERC721Received.selector;
+    }
+
+    // 这是接收以太币的函数，只有在合约收到没有数据的以太币时会触发。
+    receive() external payable {
+        // 可以在这里实现自定义逻辑，当接收到以太币时执行。
+        // 比如记录接收的数量、触发事件等。
     }
 }

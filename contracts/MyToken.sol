@@ -4,7 +4,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract MyToken is ERC20, Ownable {
-    uint256 public constant RATE = 100000000; // 100000000 MyToken per 1 ETH
+    uint256 public constant RATE = 100_000_000; // 100000000 MyToken per 1 ETH
     uint256 public constant MIN_ETH = 0.001 ether;
 
     constructor(address initialOwner) ERC20("RCCDemoToken", "RDT") Ownable(msg.sender) {

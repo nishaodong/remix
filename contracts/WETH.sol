@@ -42,6 +42,7 @@ contract WETH {
         uint256 amount
     ) public returns (bool) {
         require(balanceOf[src] >= amount,"Insufficient balance");
+        //只有代理转账时才会检查该代码
         if (src != msg.sender) {
             require(allowance[src][msg.sender] >= amount,"allowance buzhu");
             allowance[src][msg.sender] -= amount;

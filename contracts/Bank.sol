@@ -7,7 +7,7 @@ contract Bank {
     event Deposit(address _ads, uint256 amount);
     event Withdraw(uint256 amount);
     // receive 接受外部发送的eth
-    receive() external payable {
+    receive() external payable  {
         emit Deposit(msg.sender, msg.value);
     }
     // 构造函数
